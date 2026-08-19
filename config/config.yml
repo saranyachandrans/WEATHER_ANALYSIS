@@ -1,0 +1,38 @@
+# Weather Data Ingestion Configuration
+
+api:
+  url: "https://archive-api.open-meteo.com/v1/archive"
+
+location:
+  name: "Thiruvananthapuram"
+  state: "Kerala"
+  country: "India"
+  latitude: 8.5241
+  longitude: 76.9366
+
+date_range:
+  start_date: "2022-01-01"
+  end_date: "2026-08-18"
+
+weather:
+  hourly:
+    - temperature_2m
+    - relative_humidity_2m
+    - apparent_temperature
+    - precipitation
+    - rain
+    - weather_code
+    - cloud_cover
+    - surface_pressure
+    - wind_speed_10m
+    - wind_direction_10m
+    - wind_gusts_10m
+
+  timezone: "Asia/Kolkata"
+  temperature_unit: "celsius"
+  wind_speed_unit: "kmh"
+  precipitation_unit: "mm"
+
+output:
+  directory: "static/raw"
+  filename: "thiruvananthapuram_weather_2022_2026.csv"
